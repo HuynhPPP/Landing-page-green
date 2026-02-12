@@ -1,0 +1,114 @@
+/* Why Choose Section Styles */
+.why-choose-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: #f0fdf4; /* Very light green background */
+}
+
+.why-choose-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.why-choose-title {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  color: #166534; /* Green-800 */
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.why-choose-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #fcd34d; /* Yellow accent */
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+@media (min-width: 768px) {
+  .why-choose-title {
+    font-size: 2.5rem;
+  }
+}
+
+.reasons-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .reasons-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem 3rem;
+  }
+}
+
+.reason-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: white;
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.05),
+    0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.reason-item:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.reason-icon-wrapper {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background-color: #dcfce7; /* Green-100 */
+  color: #16a34a; /* Green-600 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  border: 4px solid #f0fdf4; /* Ring effect */
+  box-shadow: 0 0 0 2px #16a34a; /* Outer thin ring */
+}
+
+.reason-content {
+  width: 100%;
+}
+
+.reason-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+.reason-description {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin: 0;
+}

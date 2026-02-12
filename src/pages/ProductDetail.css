@@ -1,0 +1,322 @@
+/* Main Content - Document Style */
+.product-detail-container {
+  min-height: 100vh;
+  background-color: #f9f9f9;
+}
+
+/* Top Bar: Back Button & Logo */
+.back-button-container {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .back-button-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #6b7280;
+  transition: color 150ms;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.back-button:hover {
+  color: #16a34a;
+}
+
+.back-button-icon {
+  height: 1rem;
+  width: 1rem;
+  transition: transform 150ms;
+}
+
+.back-button:hover .back-button-icon {
+  transform: translateX(-0.25rem);
+}
+
+.back-button-text {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Header Logo Style (in Top Bar) */
+.emotional-logo-header {
+  height: 60px; /* Bigger logo as requested */
+  width: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 640px) {
+  .emotional-logo-header {
+    height: 80px;
+  }
+
+  .back-button-text {
+    font-size: 0.75rem;
+  }
+}
+
+.main-content {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* 1. Header Section title - Simplified to full width */
+.product-header-section {
+  margin-top: 5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.product-title-center {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #111827;
+  margin-bottom: 0;
+  line-height: 1.3;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .product-title-center {
+    font-size: 2.25rem;
+  }
+}
+
+/* 2. Split Layout (Image + Intro) */
+.product-layout-split {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .product-layout-split {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .image-column {
+    width: 45%;
+    flex-shrink: 0;
+  }
+
+  .intro-text-column {
+    flex: 1;
+  }
+}
+
+/* Image Grid Styles */
+.image-column {
+  width: 100%;
+}
+
+.image-gallery-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.gallery-item {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 480px) {
+  .gallery-item {
+    width: calc(50% - 0.5rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Max 3 per row as requested */
+  .gallery-item {
+    width: calc(33.333% - 0.67rem);
+  }
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+}
+
+/* Intro Text Column */
+.intro-text-column {
+  font-family: var(--font-body);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+.product-description-text {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #374151;
+  margin-bottom: 1.5rem;
+}
+
+.sub-section-title {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+.target-list-bullets {
+  padding-left: 1.5rem;
+  margin: 0;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.target-list-bullets li {
+  margin-bottom: 0.5rem;
+}
+
+/* 4. Full Width Ingredients Table */
+.full-width-section {
+  margin-bottom: 3rem;
+}
+
+.section-title-bar {
+  background-color: var(--primary); /* Green bar */
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 10px; /* Table attaches directly */
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  border: 1px solid #e5e7eb;
+  border-top: none;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.document-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+}
+
+.document-table th {
+  text-align: left;
+  padding: 1rem;
+  background-color: #e6f7ed; /* Very light green tint */
+  color: #111827;
+  font-weight: 700;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.document-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.document-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* 5. Detailed Info Blocks */
+.detailed-info-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info-block {
+  margin-bottom: 1rem;
+}
+
+.section-title-simple {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--primary);
+  display: inline-block;
+  padding-bottom: 0.25rem;
+}
+
+.document-list {
+  padding-left: 1.5rem;
+  margin: 0;
+  color: #374151;
+  line-height: 1.6;
+  font-family: var(--font-body);
+}
+
+.document-list li {
+  margin-bottom: 0.5rem;
+}
+
+.dosage-text {
+  font-family: var(--font-body);
+  color: #374151;
+  line-height: 1.6;
+}
+
+.dosage-line {
+  margin-bottom: 0.5rem;
+}

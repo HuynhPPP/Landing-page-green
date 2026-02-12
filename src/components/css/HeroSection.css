@@ -1,0 +1,288 @@
+.hero-section {
+  background-color: #cdffcd;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+}
+
+.hero-banner-container {
+  width: 100%;
+}
+
+.hero-banner-image {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-content-wrapper {
+  /* Inherits .gradient-hero from global or we redefine */
+  background: var(--gradient-hero);
+  position: relative;
+  width: 70%;
+  margin: 2rem auto;
+  overflow: hidden;
+  padding: 2.5rem 0; /* py-10 */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
+}
+
+@media (min-width: 768px) {
+  .hero-content-wrapper {
+    width: 70%;
+    border-radius: 0.75rem; /* rounded-xl */
+    padding: 4rem 0; /* md:py-16 */
+  }
+}
+
+.hero-logos {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 1rem;
+  z-index: 20;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+@media (min-width: 768px) {
+  .hero-logos {
+    top: 2rem;
+    right: 2rem;
+  }
+}
+
+.hero-logo {
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo-green {
+  height: 2rem;
+}
+
+.logo-radio {
+  height: 2.8rem;
+}
+
+.hero-logo:hover {
+  transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+  .logo-green {
+    height: 2.75rem;
+  }
+  .logo-radio {
+    height: 3.75rem;
+  }
+}
+
+.hero-logo-divider {
+  width: 1px;
+  height: 2rem;
+  background-color: #e5e7eb; /* gray-200 */
+}
+
+.hero-inner-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .hero-inner-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.hero-content-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 56rem; /* max-w-4xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-brand-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-icon-leaf {
+  height: 2.5rem;
+  width: 2.5rem;
+  color: hsl(var(--primary-foreground));
+}
+
+.hero-brand-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: hsl(var(--primary-foreground) / 0.9);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .hero-brand-name {
+    font-size: 1.125rem; /* text-lg */
+  }
+}
+
+.hero-title {
+  font-size: 3.5rem; /* text-5xl+ */
+  line-height: 1;
+  font-weight: 800;
+  color: hsl(var(--primary-foreground));
+  letter-spacing: -0.025em;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1));
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 3.75rem; /* text-6xl */
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 4.5rem; /* text-7xl */
+  }
+}
+
+.hero-title-highlight {
+  color: hsl(var(--primary-foreground) / 0.8);
+  font-size: 1.875rem; /* 3xl */
+  vertical-align: super;
+  margin-left: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .hero-title-highlight {
+    font-size: 2.25rem; /* 4xl */
+  }
+}
+
+.hero-tagline {
+  font-size: 1.5rem; /* 2xl */
+  line-height: 1.25;
+  font-weight: 700;
+  color: hsl(var(--primary-foreground) / 0.95);
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .hero-tagline {
+    font-size: 1.875rem; /* 3xl */
+  }
+}
+
+.hero-subtitle {
+  color: hsl(var(--primary-foreground) / 0.8);
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+  max-width: 42rem; /* max-w-2xl */
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.625;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .hero-subtitle {
+    font-size: 1.25rem; /* text-xl */
+  }
+}
+
+.hero-highlights {
+  display: inline-block;
+  text-align: left;
+  max-width: 36rem; /* max-w-xl */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5rem;
+}
+
+.hero-highlights > * + * {
+  margin-top: 1rem; /* space-y-4 */
+}
+
+.hero-highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  color: hsl(var(--primary-foreground));
+}
+
+.hero-highlight-number {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 9999px;
+  background-color: hsl(var(--primary-foreground) / 0.2);
+  color: hsl(var(--primary-foreground));
+  font-weight: 700;
+  font-size: 0.875rem;
+  margin-top: 0.125rem;
+}
+
+.hero-highlight-text {
+  font-size: 1rem;
+  line-height: 1.625;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .hero-highlight-text {
+    font-size: 1.125rem; /* lg */
+  }
+}
+
+.hero-cta-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  border-radius: 9999px;
+  background-color: rgb(84 187 108); /* yellow-400 */
+  color: hsl(
+    var(--primary-foreground)
+  ); /* Assuming white text or similar contrast */
+  /* Wait, yellow-400 text color is usually black or dark, but original used text-primary-foreground which is white? 
+     Let's check tailwind config. --primary-foreground is 0 0% 100% (white).
+     Yellow background with white text might be low contrast, but I will stick to original class 'text-primary-foreground'.
+  */
+  font-weight: 800;
+  font-size: 1.125rem; /* lg */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 0 20px rgba(250, 204, 21, 0.6);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.hero-cta-button:hover {
+  background-color: rgb(253 224 71); /* yellow-300 */
+}
