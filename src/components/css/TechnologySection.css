@@ -19,7 +19,7 @@
 
 .tech-title {
   font-family: var(--font-display);
-  font-size: 2.5rem;
+  font-size: 2rem; /* Reduced for mobile */
   line-height: 1.2;
   font-weight: 600;
   color: #166534; /* Green-800 */
@@ -36,14 +36,15 @@
 
 .tech-subtitle {
   font-family: var(--font-body);
-  font-size: 1.5rem;
-  line-height: 1.6;
+  font-size: 1.125rem; /* Reduced for mobile */
+  line-height: 1.5;
   font-weight: 600;
   color: #374151; /* Gray-700 */
   margin: 0;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 1rem;
 }
 
 @media (min-width: 768px) {
@@ -55,12 +56,19 @@
 /* Formula Visualization */
 .formula-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column; /* Stack on mobile */
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
   padding: 2rem 0;
+}
+
+@media (min-width: 768px) {
+  .formula-container {
+    flex-direction: row; /* Row on desktop */
+    flex-wrap: wrap;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -71,8 +79,16 @@
 
 .formula-step {
   display: flex;
+  flex-direction: column; /* Stack content center on mobile */
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .formula-step {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
 }
 
 .step-content {
@@ -82,17 +98,17 @@
 }
 
 .step-circle {
-  width: 6rem;
-  height: 6rem;
+  width: 5rem; /* Smaller on mobile */
+  height: 5rem;
   border-radius: 50%;
   background-color: #ecfdf5; /* Green-50 */
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   border: 4px solid #d1fae5; /* Green-200 */
   color: #059669; /* Green-600 */
-  font-size: 2rem;
+  font-size: 1.75rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
@@ -107,14 +123,15 @@
     width: 8rem;
     height: 8rem;
     font-size: 3rem;
+    margin-bottom: 1rem;
   }
 }
 
 .step-label {
   font-family: var(--font-display);
-  font-size: 1.125rem;
+  font-size: 1rem;
   text-align: center;
-  max-width: 180px;
+  max-width: 150px;
   font-weight: 700;
   color: #1f2937; /* Gray-800 */
   margin: 0;
@@ -124,19 +141,29 @@
 @media (min-width: 768px) {
   .step-label {
     font-size: 1.25rem;
+    max-width: 180px;
   }
 }
 
 .operator-icon {
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 2rem;
+  width: 2rem;
   color: #16a34a;
   flex-shrink: 0;
+  transform: rotate(90deg); /* Rotate for vertical stack */
+}
+
+@media (min-width: 768px) {
+  .operator-icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    transform: rotate(0deg);
+  }
 }
 
 .result-circle {
-  width: 7rem;
-  height: 7rem;
+  width: 10rem; /* Adjusted for mobile readability */
+  height: 10rem;
   border-radius: 50%;
   background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
   display: flex;
@@ -145,13 +172,16 @@
   padding: 1rem;
   border: 6px solid #dcfce7; /* Green-100 ring */
   box-shadow: 0 20px 25px -5px rgba(22, 163, 74, 0.2);
-  transform: scale(1.1);
+  transform: scale(1);
+  margin-top: 1rem;
 }
 
 @media (min-width: 768px) {
   .result-circle {
     width: 16rem;
-    height: 15rem;
+    height: 16rem; /* Make it circle */
+    transform: scale(1.1);
+    margin-top: 0;
   }
 }
 

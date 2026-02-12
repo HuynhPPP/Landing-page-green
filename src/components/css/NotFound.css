@@ -3,34 +3,204 @@
   min-height: 100vh;
   align-items: center;
   justify-content: center;
-  background-color: #f3f4f6; /* bg-muted: typically a light gray */
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background elements */
+.not-found-container::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle,
+    rgba(22, 163, 74, 0.1) 0%,
+    rgba(22, 163, 74, 0) 70%
+  );
+  top: -100px;
+  right: -100px;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+@media (min-width: 768px) {
+  .not-found-container::before {
+    width: 600px;
+    height: 600px;
+    top: -200px;
+    right: -200px;
+  }
+}
+
+.not-found-container::after {
+  content: '';
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(
+    circle,
+    rgba(250, 204, 21, 0.1) 0%,
+    rgba(250, 204, 21, 0) 70%
+  );
+  bottom: -75px;
+  left: -75px;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+@media (min-width: 768px) {
+  .not-found-container::after {
+    width: 500px;
+    height: 500px;
+    bottom: -150px;
+    left: -150px;
+  }
 }
 
 .not-found-content {
   text-align: center;
+  position: relative;
+  z-index: 10;
+  padding: 2rem 1.5rem;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 1.5rem;
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  max-width: 600px;
+  width: 90%;
+  border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
-.not-found-title {
+@media (min-width: 768px) {
+  .not-found-content {
+    padding: 3rem;
+    border-radius: 2rem;
+  }
+}
+
+.logos-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .logos-container {
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.brand-logo {
+  height: 40px; /* Smaller on mobile */
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+@media (min-width: 768px) {
+  .brand-logo {
+    height: 60px;
+  }
+}
+
+.divider {
+  width: 2px;
+  height: 30px;
+  background-color: #cbd5e1;
+  border-radius: 1px;
+}
+
+@media (min-width: 768px) {
+  .divider {
+    height: 40px;
+  }
+}
+
+.not-found-title-large {
+  font-family: var(--font-display);
+  font-size: 5rem; /* Smaller for mobile */
+  line-height: 1;
+  font-weight: 800;
+  color: #166534;
+  margin: 0;
+  text-shadow: 0 4px 0 rgba(22, 163, 74, 0.2);
+  letter-spacing: -0.05em;
+}
+
+@media (min-width: 768px) {
+  .not-found-title-large {
+    font-size: 8rem;
+  }
+}
+
+.not-found-subtitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #14532d;
+  margin-top: 0.5rem;
   margin-bottom: 1rem;
-  font-size: 2.25rem; /* text-4xl */
-  line-height: 2.5rem;
-  font-weight: 700;
-  color: #111827; /* implied foreground */
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .not-found-subtitle {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
 }
 
 .not-found-message {
-  margin-bottom: 1rem;
-  font-size: 1.25rem; /* text-xl */
-  line-height: 1.75rem;
-  color: #6b7280; /* text-muted-foreground */
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #4b5563;
+  margin-bottom: 2rem;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.not-found-link {
-  color: #16a34a; /* text-primary */
-  text-decoration: underline;
-  transition: color 0.15s;
+@media (min-width: 768px) {
+  .not-found-message {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+  }
 }
 
-.not-found-link:hover {
-  color: #15803d; /* hover:text-primary/90 (darker green) */
+.not-found-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  color: white;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(22, 163, 74, 0.4);
+}
+
+@media (min-width: 768px) {
+  .not-found-button {
+    padding: 0.75rem 2rem;
+    font-size: 1.125rem;
+  }
+}
+
+.not-found-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(22, 163, 74, 0.5);
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
 }

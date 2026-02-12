@@ -15,10 +15,28 @@ const NotFound = () => {
   return (
     <div className='not-found-container'>
       <div className='not-found-content'>
-        <h1 className='not-found-title'>404</h1>
-        <p className='not-found-message'>Oops! Page not found</p>
-        <a href='/' className='not-found-link'>
-          Return to Home
+        <div className='logos-container'>
+          <img
+            src='/logo-green100.png'
+            alt='Green 100 Logo'
+            className='brand-logo'
+          />
+          <div className='divider'></div>
+          <img
+            src='/Logo_Radio_Shopping.png'
+            alt='Radio Shopping Logo'
+            className='brand-logo'
+          />
+        </div>
+
+        <h1 className='not-found-title-large'>404</h1>
+        <h2 className='not-found-subtitle'>Không tìm thấy trang</h2>
+        <p className='not-found-message'>
+          Xin lỗi, trang bạn đang tìm kiếm không tồn tại hoặc đã được di chuyển.
+        </p>
+
+        <a href='/' className='not-found-button'>
+          QUAY VỀ TRANG CHỦ
         </a>
       </div>
     </div>
