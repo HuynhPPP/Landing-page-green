@@ -239,6 +239,13 @@ export const productCategories: ProductCategory[] = [
         description:
           'Kitchen KLEEN ứng dụng công nghệ sinh học từ Canada, với thành phần chứa vi sinh đặc biệt chuyển hóa vết dầu mỡ trong nhà bếp thành nước giúp dễ lau chùi, hạn chế mùi hôi và vi khuẩn gây bệnh. Sản phẩm chứa thành phần tự nhiên dễ phân hủy sinh học và đạt tiêu chuẩn Châu Âu, an toàn sức khỏe và thân thiện môi trường, an tâm sử dụng hàng ngày. pH = 7 không gây kích ứng da, không gây ăn mòn thiết bị, không chứa hợp chất hữu cơ dễ bay hơi (VOCs).',
         image: '/products/kitchen/kitchen-kleen-refill-3/1.jpg',
+        images: [
+          '/products/kitchen/kitchen-kleen-refill-3/1.jpg',
+          '/products/kitchen/kitchen-kleen-refill-3/2.jpg',
+          '/products/kitchen/kitchen-kleen-refill-3/3.jpg',
+          '/products/kitchen/kitchen-kleen-refill-3/4.jpg',
+          '/products/kitchen/kitchen-kleen-refill-3/5.jpg',
+        ],
         category: 'kitchen',
         brand: 'KLEEN',
         origin:

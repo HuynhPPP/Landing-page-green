@@ -16,6 +16,7 @@ const ProductDetail = () => {
     .find((p) => p.id === productId);
 
   useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to top when component mounts or product changes
     if (product) {
       setActiveImage(
         product.images && product.images.length > 0
@@ -33,10 +34,18 @@ const ProductDetail = () => {
             Không tìm thấy sản phẩm
           </h1>
           <button
-            onClick={() => navigate('/')}
+            onClick={() => {
+              navigate('/');
+              setTimeout(() => {
+                const element = document.getElementById('products');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }, 100);
+            }}
             className='px-6 py-2 bg-primary text-primary-foreground rounded-lg font-semibold'
           >
-            Quay về trang chủ
+            Quay về danh sách sản phẩm
           </button>
         </div>
       </div>
@@ -55,7 +64,18 @@ const ProductDetail = () => {
     <div className='product-detail-container'>
       {/* Top Bar: Back button & Logo */}
       <div className='back-button-container'>
-        <button onClick={() => navigate('/')} className='back-button'>
+        <button
+          onClick={() => {
+            navigate('/');
+            setTimeout(() => {
+              const element = document.getElementById('products');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+              }
+            }, 100);
+          }}
+          className='back-button'
+        >
           <ArrowLeft className='back-button-icon' />
           <span className='back-button-text'>Quay lại danh sách</span>
         </button>
@@ -83,18 +103,7 @@ const ProductDetail = () => {
             <div className='image-column'>
               <div className='image-gallery-flex'>
                 {[product.image, ...(product.images || [])]
-                  .filter((img) => img !== product.image) // Filter out duplicates of main image if any
-                  .reduce(
-                    (acc, current) => {
-                      if (!acc.includes(current)) acc.push(current);
-                      return acc;
-                    },
-                    [product.image]
-                  ) // Start with main image
-                  // Actually, just combining unique images.
-                  // Let's settle on a simple filter logic:
-                  // All images = product.image + product.images. Unique.
-                  .filter((value, index, self) => self.indexOf(value) === index)
+                  .filter((value, index, self) => self.indexOf(value) === index) // Unique filter
                   .map((img, idx) => (
                     <div key={idx} className='gallery-item'>
                       <img
